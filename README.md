@@ -1,4 +1,4 @@
-# Fast Bulk Image Integrity Checker
+# Fast Image Integrity Checker
 Check for corrupted JPEG,PNG (and more) images in bulk using GPU jpeg decoding powered by NVIDIA DALI!
 
 Super fast compared to alternatives because it uses GPU decoding and checks in batches.
