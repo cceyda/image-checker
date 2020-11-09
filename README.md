@@ -91,3 +91,7 @@ DALI works with a batching+prefetching system. So batch_size * prefetch number o
 [check-media-integrity](https://github.com/ftarlao/check-media-integrity): supports more types but uses PIL thus slow.
 
 [Bad Peggy](https://github.com/llaith-oss/BadPeggy): Checks JPEG images, maybe detects more types of errors than this one.
+
+# TODOs
+Add tests
+
