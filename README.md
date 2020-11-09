@@ -4,7 +4,7 @@ Check for corrupted JPEG,PNG (and more) images in bulk using GPU jpeg decoding p
 Super fast compared to alternatives because it uses GPU decoding and checks in batches.
 
 # Requirements
-Depending on your cuda version:
+Depending on your cuda version install:
 [NVIDIA DALI](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html#id1)
 
 # Usage
@@ -77,15 +77,16 @@ bad_files=checker_batch(ds, args)
     
 - Supported image types?
 
-        Same as [DALI supported formats](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/supported_ops.html?highlight=supported%20image#nvidia.dali.ops.ImageDecoder): JPG, BMP, PNG, TIFF, PNM, PPM, PGM, PBM, JPEG 2000. Please note that GPU acceleration for JPEG 2000 decoding is only available for CUDA 11.
+Same as [DALI supported formats](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/supported_ops.html?highlight=supported%20image#nvidia.dali.ops.ImageDecoder): JPG, BMP, PNG, TIFF, PNM, PPM, PGM, PBM, JPEG 2000. Please note that GPU acceleration for JPEG 2000 decoding is only available for CUDA 11.
     
 - What is batch_size & prefetch?
-        DALI works with a batching+prefetching system. So batch_size * prefetch number of images are read at a time. If there is a corrupted file in the batch that batch is rechecked 1-by-1. So keep batch_size reasonable (0<100)
+
+DALI works with a batching+prefetching system. So batch_size * prefetch number of images are read at a time. If there is a corrupted file in the batch that batch is rechecked 1-by-1. So keep batch_size reasonable (0<100)
 
 
-Package versioning follows dali for major.minor (since it heavily depends on it), patch is this packages version changes.
+- Package versioning follows dali for major.minor (since it heavily depends on it), patch is this packages version changes.
 
 # Alternatives
 [check-media-integrity](https://github.com/ftarlao/check-media-integrity): supports more types but uses PIL thus slow.
 
-[Bad Peggy](https://github.com/llaith-oss/BadPeggy): Checks JPEG images, maybe detects more types of errors than this.
+[Bad Peggy](https://github.com/llaith-oss/BadPeggy): Checks JPEG images, maybe detects more types of errors than this one.
