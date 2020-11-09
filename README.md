@@ -6,6 +6,7 @@ Super fast compared to alternatives because it uses GPU decoding and checks in b
 # Requirements
 Depending on your cuda version install:
 [NVIDIA DALI](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html#id1)
+If it fails try `pip3 install –upgrade pip`
 
 # Usage
 
