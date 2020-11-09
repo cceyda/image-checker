@@ -3,6 +3,8 @@ Check for corrupted JPEG,PNG (and more) images in bulk using GPU jpeg decoding p
 
 Super fast compared to alternatives because it uses GPU decoding and checks in batches.
 
+![](dali_checker.jpg)
+
 # Requirements
 Depending on your cuda version install:
 [NVIDIA DALI](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html#id1)
