@@ -5,6 +5,8 @@ Super fast compared to alternatives because it uses GPU decoding and checks in b
 
 ![](dali_checker.jpg)
 
+What is DALI? [blogpost](https://cceyda.github.io/blog/dali/cv/image_processing/2020/11/10/nvidia_dali.html)
+
 # Requirements
 Depending on your cuda version install:
 [NVIDIA DALI](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html#id1)
