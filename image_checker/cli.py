@@ -34,7 +34,7 @@ def main():
     args = parser.parse_args()
     args = vars(args)
     
-    args["prefetch"]=2
+    args["prefetch"]=1
     if args["use_cpu"]:
         args["device"]="cpu"
     else: 
