@@ -46,14 +46,16 @@ def checker_batch(ds, args):
                 try:
                     images, paths = next(batched_iterator)
                     image_paths.extend(paths)
+                    checker.feed(images)
                 except StopIteration:
                     has_more = False
-                checker.feed(images)
-            checker.pipe.run()
-            pbar.update(len(image_paths))
+            if image_paths:    
+                checker.pipe.run()
+                pbar.update(len(image_paths))
             return None
         except Exception as e:
-            #             log.error(e)
+            #log.debug(e)
+            #log.debug(image_paths)
             log.debug("Found bad files in batch")
             log.debug("cleaning old pipe")
             del checker
@@ -71,7 +73,7 @@ def checker_batch(ds, args):
             bad_paths = checker_single(ds,args, pbar, pbar_bad)
             baddies.extend(bad_paths)
             for x in bad_paths:
-                log_err.error(f"Bad file: {x}")
+                log_err.error(x)
             log.debug("Continuing Scan")
             checker = DaliChecker(args["batch_size"], args["prefetch"],args["device"],args["device_id"])
     log.info("End of Scan")
@@ -99,15 +101,18 @@ def checker_single(ds,args, pbar=None, pbar_bad=None):
                 try:
                     images, paths = next(batched_iterator)
                     image_paths.extend(paths)
+                    checker.feed(images)
                 except StopIteration:
                     has_more = False
-                checker.feed(images)
-            checker.pipe.run()
-            pbar.update(1)
+            if image_paths:   
+                checker.pipe.run()
+                pbar.update(len(image_paths))
             return None
         except Exception as e: 
             bad_paths.extend(image_paths)
-            pbar_bad.update(1)
+            log.debug(e)
+            log.debug(image_paths)
+            pbar_bad.update(len(image_paths))
             log.debug("Found bad file")
             log.debug("cleaning old pipe")
             del checker
