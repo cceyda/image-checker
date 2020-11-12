@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "image-checker"
-version = "0.27.2"
+version = "0.27.3"
 description = "Check for corrupted images using Nvidia DALI"
 authors = ["Ceyda Cinarel <snu-ceyda@users.noreply.github.com>"]
 license = "MIT"

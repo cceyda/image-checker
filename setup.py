@@ -21,7 +21,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='image-checker',
-    version='0.27.2',
+    version='0.27.3',
     description='Check for corrupted images using Nvidia DALI',
     python_requires='==3.*,>=3.5.0',
     project_urls={"repository": "https://github.com/cceyda/image-checker"},
