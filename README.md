@@ -21,8 +21,7 @@ or
 `git clone https://github.com/cceyda/image-checker.git`
 
 ## CLI
-There is a CLI that takes a folder `--path` to scan for images with the given extensions `--ext`  
-outputs an `error.log`. Format of log file can be modified by `--log_conf` error handler using python logging [example](/master/dali_image_checker/logging_config.json). If you don't want to use gpu provide `--use_cpu` flag. Use `--recursive` to 
+There is a CLI that takes a folder `--path` to scan for images with the given extensions `--ext`. Outputs one line to `error.log` containing image path per broken file. Format of log file can be modified by `--log_conf` error handler using python logging [example](/master/dali_image_checker/logging_config.json). If you don't want to use gpu provide `--use_cpu` flag. Use `--recursive` to 
 traverse sub-folders.
 
 `image-check --path /mnt/data/dali_test/corrupt --recursive`

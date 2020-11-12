@@ -13,7 +13,7 @@ import os.path
 
 readme = ''
 here = os.path.abspath(os.path.dirname(__file__))
-readme_path = os.path.join(here, 'README.rst')
+readme_path = os.path.join(here, 'README.md')
 if os.path.exists(readme_path):
     with open(readme_path, 'rb') as stream:
         readme = stream.read().decode('utf8')
@@ -21,7 +21,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='image-checker',
-    version='0.27.1',
+    version='0.27.2',
     description='Check for corrupted images using Nvidia DALI',
     python_requires='==3.*,>=3.5.0',
     project_urls={"repository": "https://github.com/cceyda/image-checker"},
