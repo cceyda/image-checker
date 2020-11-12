@@ -4,7 +4,7 @@ import logging
 from pathlib import Path
 
 log = logging.getLogger("image_checker")
-
+log_err = logging.getLogger("image_checker.errors")
 
 def folder_iterator(image_folder,extensions, recursive):
     files = os.scandir(image_folder)
@@ -25,6 +25,7 @@ def file_iterator(files,extensions,recursive):
                     image = np.frombuffer(f.read(), dtype=np.uint8)
                     yield image, image_path
                 except Exception as e:
-                    log.error(f"Couldn't read file: {image_path}, Err:{e}")
+                    log.debug(f"Couldn't read file: {image_path}, Err:{e}")
+                    log_err.error(f"Couldn't read file: {image_path}, Err:{e}")
         elif recursive and fil.is_dir():
             yield from folder_iterator(fil.path,extensions,recursive)
