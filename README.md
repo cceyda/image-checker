@@ -57,7 +57,7 @@ from image_checker.iterators import folder_iterator
 args = {
      "path": "/mnt/data/images/main/",
      "batch_size": 50,
-     "prefetch": 2,
+     "prefetch": 1,
      "debug": False,
      "extensions": ["jpeg", "jpg", "png"],
      "recursive":False,
@@ -85,7 +85,7 @@ Same as [DALI supported formats](https://docs.nvidia.com/deeplearning/dali/user-
     
 - What is batch_size & prefetch?
 
-DALI works with a batching+prefetching system. So batch_size * prefetch number of images are read at a time. If there is a corrupted file in the batch that batch is rechecked 1-by-1. So keep batch_size reasonable (0<100)
+DALI works with a batching+prefetching system. So batch_size * prefetch number of images are read at a time. If there is a corrupted file in the batch that batch is rechecked 1-by-1. So keep batch_size reasonable (0<100). Currently, only **prefetch=1** works but it is a TODO item.
 
 
 - Package versioning follows dali for major.minor (since it heavily depends on it), patch is this packages version changes.
